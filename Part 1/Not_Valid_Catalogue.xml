@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-7" ?>
+<!DOCTYPE Catalogue SYSTEM "Restaurant_Catalogue.dtd">
+
+<Catalogue>
+    <Basic_Menu>
+        <Dish Type="Normal" Code="a1">
+            <Name Spicy="Yes" Description="Συνοδεύεται με ρύζι"> Μπούτι κοτόπουλο </Name>
+            <Category Type="Main_Dish"/>
+            <Ingredient Ingredient_Category="Fresh" Necessary="Yes"> <Ingredient_Name> Κοτόπουλο </Ingredient_Name> </Ingredient>
+            <Ingredient Ingredient_Category="Fresh" Necessary="No"> <Ingredient_Name> Ρύζι </Ingredient_Name> </Ingredient>
+            <Price> 8ευρώ </Price>
+        </Dish>
+        <Dish Type="Normal" Code="a1">
+            <Name Spicy="No"> Παστίτσιο </Name>
+            <Category Type="Main_Dish"/>
+            <Ingredient Ingredient_Category="Fresh" Necessary="Yes"> <Ingredient_Name> Μακαρόνια </Ingredient_Name> </Ingredient>
+            <Ingredient Ingredient_Category="Fresh" Necessary="Yes"> <Ingredient_Name> Μπεσαμέλ </Ingredient_Name> </Ingredient>
+            <Price> 8ευρώ </Price>
+        </Dish>
+		<Dish Type="Normal" Code="a3">
+            <Name Spicy="No" Description="Η κλασική"> Σαλάτα του Σεφ </Name>
+            <Category Type="Salad"/>
+            <Ingredient Ingredient_Category="Fresh" Necessary="Yes"> <Ingredient_Name> Ντομάτα </Ingredient_Name> </Ingredient>
+            <Ingredient Ingredient_Category="Fresh" Necessary="Yes"> <Ingredient_Name> Αυγά </Ingredient_Name> </Ingredient>
+            <Price> 5ευρώ </Price>
+        </Dish>
+		<Dish Code="a4">
+            <Name Spicy="No"> Σουφλέ σοκολάτα </Name>
+            <Category Type="Dessert"/>
+            <Ingredient Ingredient_Category="Fresh" Necessary="Yes"> <Ingredient_Name> Κουβερτούρα </Ingredient_Name> </Ingredient>
+            <Ingredient Ingredient_Category="Fresh" Necessary="Yes"> <Ingredient_Name> Ζάχαρη </Ingredient_Name> </Ingredient>
+            <Price> 4ευρώ </Price>
+        </Dish>
+    </Basic_Menu>
+	<Special_Offer_Menu idref1="a1" idref2="a4" Total_Price="10ευρώ"/>
+	<Special_Offer_Menu idref1="a1" idref2="a3" Total_Price="10ευρώ"/>	
+</Catalogue>

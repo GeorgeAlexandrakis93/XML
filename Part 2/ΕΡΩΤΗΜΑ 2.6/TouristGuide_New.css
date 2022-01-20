@@ -1,0 +1,182 @@
+﻿Root_Element {
+	background-color: lightgray;
+	}
+
+Location_Name {
+	background-color: teal;
+	width: 130px;
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	border: 8px solid midnightblue;
+	margin: 40px;
+	padding: 60px 35px 60px 35px;
+	float: left;
+	}
+
+Description { 
+	margin-top: 70px;
+	margin-right: 40px;
+	margin-bottom: 90px;
+	display: block;
+	}
+
+Local_Products:before {
+	content: "Μερικά απο τα τοπικά προϊόντα είναι τα εξής:";
+	}
+
+Local_Products:after {
+	content: ".";
+	}
+
+Cultural_Events:before {
+	content: "Γνωστές εκδηλώσεις της περιοχής, όπως";
+	}
+
+Cultural_Events:after {
+	content: ".";
+	}
+
+Event:before {
+	content: ",";
+	}
+
+Monuments, Arounds, Beaches, Routing, Useful_Phones, Location_Climate {
+	display: list-item;
+	list-style-image: url('bulletpoint.png');
+	margin-left: 50px;
+	padding-left: 20px;
+	}
+
+Monuments:before {
+	content: "Αξιοθέατα";
+	font-size: 22px;
+	font-weight: bold;
+	color: darkcyan;
+	margin-bottom: 20px;
+	display: block;
+	}
+
+Mon_Name {
+	margin-bottom: 10px;
+	display:block;
+	}
+
+Mon_Name:before {
+	content: attr(Name) ":";
+	font-size: 17px;
+	font-weight: bold;
+	}
+
+Arounds:before {
+	content: "Γύρω Περιοχές";
+	font-size: 22px;
+	font-weight: bold;
+	color: darkcyan;
+	margin-bottom: 20px;
+	display:block;
+	}
+
+Around {
+	margin-bottom: 10px;
+	display: block;
+	}
+
+Around:before {
+	content: attr(Name) ":";
+	font-size: 17px;
+	font-weight: bold;
+	}
+
+Beaches:before {
+	content: "Παραλίες";
+	font-size: 22px;
+	font-weight: bold;
+	color: darkcyan;
+	margin-bottom: 20px;
+	display: block;
+	}
+
+Beach {
+	margin-bottom: 10px;
+	display: block;
+	}
+
+Beach:before {
+	content: attr(Name) ":";
+	font-size: 17px;
+	font-weight: bold;
+	}
+
+Routing {
+	margin-bottom: 10px;
+	}
+
+Routing:before {
+	content: "Πώς θα πάτε";
+	font-size: 22px;
+	font-weight: bold;
+	color: darkcyan;
+	margin-bottom: 20px;
+	display: block;
+	}
+
+Distance:before {
+	content: "Απέχει " attr(Value) attr(Unit) " από την " attr(From) ".";
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	display: block;
+	}
+
+Routes:after {
+	content: " ";
+	margin-bottom: 500px;
+	}
+
+Route {
+	display: block;
+	}
+
+Useful_Phones:before {
+	content: "Χρήσιμα Τηλέφωνα";
+	font-size: 22px;
+	font-weight: bold;
+	color: darkcyan;
+	margin-bottom: 20px;
+	display: block;
+	}
+
+Service_Phone {
+	margin-bottom: 10px;
+	display: block;
+	}
+
+Serv_Name {
+	font-size: 17px;
+	font-weight: bold;
+	}
+
+Serv_Name:after {
+	content: ":";
+	}
+
+Location_Climate {
+	font-weight: bold;
+	margin-bottom: 10px;
+	}
+
+Location_Climate:before {
+	content: "Υγρασία";
+	font-size: 22px;
+	font-weight: bold;
+	color: darkcyan;
+	margin-bottom: 20px;
+	display: block;
+	}
+
+Location_Climate:after {
+	content: "Μέσο Ποσοστό Υγρασίας: " attr(Moist_Perc) "%";
+	font-size: 17px;
+	display: block;
+	}

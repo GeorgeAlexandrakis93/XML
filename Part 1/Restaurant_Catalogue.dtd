@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-7" ?>
+
+<!ELEMENT Catalogue (Basic_Menu, Special_Offer_Menu*)>
+<!ELEMENT Basic_Menu (Dish+)>
+<!ELEMENT Dish (Name, Category, Ingredient+, Price)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Category EMPTY>
+<!ELEMENT Ingredient (Ingredient_Name)>
+<!ELEMENT Ingredient_Name (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT Special_Offer_Menu EMPTY>
+<!ATTLIST Dish 
+	Type (Normal | Sweet) #REQUIRED
+	Code ID #REQUIRED>
+<!ATTLIST Name
+	Spicy (Yes | No) #IMPLIED
+	Description CDATA #IMPLIED>
+<!ATTLIST Category
+	Type (Main_Dish | Appetizer | Dessert | Salad) #REQUIRED>
+<!ATTLIST Ingredient
+	Ingredient_Category (Chilled | Fresh | Packaged) #IMPLIED	
+	Necessary (Yes | No) #REQUIRED>
+<!ATTLIST Special_Offer_Menu
+	idref1 IDREF #REQUIRED
+	idref2 IDREF #REQUIRED
+	Total_Price CDATA #REQUIRED>

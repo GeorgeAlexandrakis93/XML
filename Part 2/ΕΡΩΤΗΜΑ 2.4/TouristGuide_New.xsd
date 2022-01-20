@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-7" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="Root_Element">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="Touristic_Location" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Location_Name" type="xs:string"/>
+                        <xs:element name="Description">
+                            <xs:complexType mixed="true">
+                                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                    <xs:element name="Local_Products">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Prod_Name" type="xs:string" maxOccurs="unbounded"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="Cultural_Events">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                        <xs:simpleContent>
+                                                            <xs:extension base="xs:string">                                                         
+                                                                <xs:attribute name="Date" type="xs:string" use="required"/>
+                                                                <xs:attribute name="Event_Desc" type="xs:string" use="optional"/>
+                                                            </xs:extension>                                                        
+                                                        </xs:simpleContent>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:choice>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Monuments">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Mon_Name" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:simpleContent>
+                                                <xs:extension base="xs:string">                                                         
+                                                    <xs:attribute name="Name" type="xs:string" use="required"/>
+                                                </xs:extension>                                                        
+                                            </xs:simpleContent>                                        
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Arounds">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Around">
+                                        <xs:complexType>
+                                            <xs:simpleContent>
+                                                <xs:extension base="xs:string">                                                         
+                                                    <xs:attribute name="Name" type="xs:string" use="required"/>
+                                                </xs:extension>                                                        
+                                            </xs:simpleContent>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Beaches" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Beach" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:simpleContent>
+                                                <xs:extension base="xs:string">                                                         
+                                                    <xs:attribute name="Name" type="xs:string" use="required"/>
+                                                </xs:extension>                                                        
+                                            </xs:simpleContent>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Routing">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Distance" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Routes" minOccurs="0" maxOccurs="1">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="Route" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                            <xs:attribute name="From" type="xs:string" use="required"/>
+                                            <xs:attribute name="Value" type="xs:positiveInteger" use="required"/>
+                                            <xs:attribute name="Unit" type="xs:string" fixed="χλρ"/>
+                                        </xs:complexType>
+                                     </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Useful_Phones">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Service_Phone" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:all>
+                                                <xs:element name="Serv_Name" type="xs:string"/>
+                                                <xs:element name="Phone" type="xs:string"/>
+                                            </xs:all>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Location_Climate">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute name="Sum_Tempr_Perc" type="xs:positiveInteger" use="optional"/>
+                                        <xs:attribute name="Moist_Perc" type="xs:positiveInteger" use="required"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

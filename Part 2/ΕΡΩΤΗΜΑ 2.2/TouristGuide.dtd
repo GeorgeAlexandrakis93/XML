@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-7"?>
+
+<!ELEMENT Root_Element (Touristic_Location*)>
+<!ELEMENT Touristic_Location (Location_Name, Description, Monuments, Arounds, Beaches?, Routing, Useful_Phones, Moist_Perc?, Sum_Tempr_Perc?)>
+<!ELEMENT Location_Name (#PCDATA)>
+<!ELEMENT Description (#PCDATA | Local_Products | Cultural_Events)*>
+<!ELEMENT Local_Products (Prod_Name+)>
+<!ELEMENT Prod_Name (#PCDATA)>
+<!ELEMENT Cultural_Events (Event*)>
+<!ELEMENT Event (#PCDATA)>
+<!ELEMENT Monuments (Mon_Name+)>
+<!ELEMENT Mon_Name (#PCDATA)>
+<!ELEMENT Arounds (Around)>
+<!ELEMENT Around (#PCDATA)>
+<!ELEMENT Beaches (Beach+)>
+<!ELEMENT Beach (#PCDATA)>
+<!ELEMENT Routing (Distance+)>
+<!ELEMENT Distance (Routes?)>
+<!ELEMENT Routes (Route*)>
+<!ELEMENT Route (#PCDATA)>
+<!ELEMENT Useful_Phones (Service_Phone*)>
+<!ELEMENT Service_Phone ((Serv_Name, Phone) | (Phone, Serv_Name))>
+<!ELEMENT Serv_Name (#PCDATA)>
+<!ELEMENT Phone (#PCDATA)>
+<!ELEMENT Moist_Perc (#PCDATA)>
+<!ELEMENT Sum_Tempr_Perc (#PCDATA)>
+<!ATTLIST Event 
+	Date CDATA #REQUIRED
+	Event_Desc CDATA #IMPLIED>
+<!ATTLIST Mon_Name Name CDATA #REQUIRED>
+<!ATTLIST Around Name CDATA #REQUIRED>
+<!ATTLIST Beach Name CDATA #REQUIRED>
+<!ATTLIST Distance
+	From CDATA #REQUIRED
+	Value CDATA #REQUIRED
+	Unit CDATA #FIXED "χλρ">

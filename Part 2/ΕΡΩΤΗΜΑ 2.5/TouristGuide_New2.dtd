@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="ISO-8859-7" ?>
+
+<!ELEMENT Root_Element (Touristic_Location*)>
+<!ELEMENT Touristic_Location (Location_Name, Description, Monuments, Arounds, Beaches?, Routing, Useful_Phones, Location_Climate, Cost_Level, Info, Voting)>
+<!ELEMENT Location_Name (#PCDATA)>
+<!ELEMENT Description (#PCDATA | Local_Products | Cultural_Events)*>
+<!ELEMENT Local_Products (Prod_Name+)>
+<!ELEMENT Prod_Name (#PCDATA)>
+<!ELEMENT Cultural_Events (Event*)>
+<!ELEMENT Event (#PCDATA)>
+<!ELEMENT Monuments (Mon_Name+)>
+<!ELEMENT Mon_Name (#PCDATA)>
+<!ELEMENT Arounds (Around)>
+<!ELEMENT Around (#PCDATA)>
+<!ELEMENT Beaches (Beach+)>
+<!ELEMENT Beach (#PCDATA)>
+<!ELEMENT Routing (Distance+)>
+<!ELEMENT Distance (Routes?)>
+<!ELEMENT Routes (Route*)>
+<!ELEMENT Route (#PCDATA)>
+<!ELEMENT Useful_Phones (Service_Phone*)>
+<!ELEMENT Service_Phone ((Serv_Name, Phone) | (Phone, Serv_Name))>
+<!ELEMENT Serv_Name (#PCDATA)>
+<!ELEMENT Phone (#PCDATA)>
+<!ELEMENT Location_Climate EMPTY>
+<!ELEMENT Cost_Level EMPTY>
+<!ELEMENT Info (Area, Population)>
+<!ELEMENT Area (#PCDATA)>
+<!ELEMENT Population (#PCDATA)>
+<!ELEMENT Voting (Vote+)>
+<!ELEMENT Vote EMPTY>
+<!ATTLIST Event 
+	Date CDATA #REQUIRED
+	Event_Desc CDATA #IMPLIED>
+<!ATTLIST Mon_Name Name CDATA #REQUIRED>
+<!ATTLIST Around Name CDATA #REQUIRED>
+<!ATTLIST Beach Name CDATA #REQUIRED>
+<!ATTLIST Distance
+	From CDATA #REQUIRED
+	Value CDATA #REQUIRED
+	Unit CDATA #FIXED "χλρ">
+<!ATTLIST Location_Climate
+	Sum_Tempr_Perc CDATA #IMPLIED
+	Moist_Perc CDATA #REQUIRED>
+<!ATTLIST Cost_Level 
+	Level (1 | 2 | 3 | 4 | 5) #IMPLIED>
+<!ATTLIST Vote
+	Username CDATA #IMPLIED
+	Stars CDATA #REQUIRED
+	Comment CDATA #IMPLIED>
